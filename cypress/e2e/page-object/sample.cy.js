@@ -1,3 +1,5 @@
+//MÁ PRÁTICA, DESCONSIDERAR
+
 import { faker } from '@faker-js/faker'
 
 const editDestinationPage = require('../../page-objects/editDestination')

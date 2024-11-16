@@ -1,3 +1,5 @@
+//MÁ PRÁTICA, DESCONSIDERAR
+
 const editDestination = {
   updateInfo: data => {
     cy.get('#destination_name')
