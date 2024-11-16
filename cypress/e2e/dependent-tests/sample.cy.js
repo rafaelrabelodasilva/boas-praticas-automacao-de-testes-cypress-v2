@@ -8,7 +8,7 @@ describe('Dependent tests bad practice', () => {
     cy.get('#password').type(Cypress.env('user_password'), { log: false })
     cy.get('button[type="submit"]').click()
     
-    cy.contains('h1', 'Your Notes').should('be.visible')
+    cy.contains('h1', 'Your Notes', {timeout: 5000}).should('be.visible')
   })
 
   it('CRUDs a note', () => {
