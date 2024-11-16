@@ -7,9 +7,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       # Install npm dependencies, cache them correctly
+      - name: Install dependencies
+        run: npm install
       # and run all Cypress tests
-      - name: Cypress run
+      - name: Run Cypress tests
         uses: cypress-io/github-action@v5
+        env:
+          CYPRESS_USER_EMAIL: ${{ secrets.CYPRESS_USER_EMAIL }}
+          CYPRESS_USER_PASSWORD: ${{ secrets.CYPRESS_USER_PASSWORD }}
       - uses: actions/upload-artifact@v3
         # add the line below to store screenshots only on failures
         if: failure()

@@ -4,8 +4,8 @@ describe('Dependent tests bad practice', () => {
 
     cy.get('.navbar-nav a:contains(Login)').click()
 
-    cy.get('#email').type(Cypress.env('user_email'))
-    cy.get('#password').type(Cypress.env('user_password'), { log: false })
+    cy.get('#email').type(Cypress.env('USER_EMAIL'))
+    cy.get('#password').type(Cypress.env('USER_PASSWORD'), { log: false })
     cy.get('button[type="submit"]').click()
     
     cy.contains('h1', 'Your Notes', {timeout: 5000}).should('be.visible')
