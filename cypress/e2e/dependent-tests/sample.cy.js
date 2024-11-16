@@ -8,8 +8,6 @@ describe('Dependent tests bad practice', () => {
     cy.get('#password').type(Cypress.env('USER_PASSWORD'), { log: false })
     cy.get('button[type="submit"]').click()
 
-    cy.wait(10000)
-
     cy.contains('h1', 'Your Notes', { timeout: 10000 }).should('be.visible')
   })
 
